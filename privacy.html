@@ -23,7 +23,7 @@
 <h1>Privacy Policy</h1>
 <p class="meta">Penzel for iOS · Last updated: <strong>2026-05-23</strong></p>
 
-<p>This Privacy Policy explains how the Penzel iOS app ("Penzel", "we", "the app") handles your information. The short version: <strong>Penzel does not collect any personal data.</strong> The only information leaving your device is anonymized crash reports if the app crashes — see Section 3.</p>
+<p>This Privacy Policy explains how the Penzel iOS app ("Penzel", "we", "the app") handles your information. The short version: <strong>Penzel does not collect personally-identifying data.</strong> The only information leaving your device is anonymized crash reports (Section 3) when the app crashes. Usage analytics are disabled in this version (Section 4).</p>
 
 <h2>1. Information We Do Not Collect</h2>
 <p>Penzel does not collect, process, or transmit any of the following:</p>
@@ -32,11 +32,11 @@
   <li>Your location, including precise or approximate GPS data</li>
   <li>Your photos, camera roll, or any media on your device</li>
   <li>Your contacts, calendar, or any other personal data Apple's APIs make available</li>
-  <li>Usage analytics or behavioral telemetry (what you tap, what you view, how long you use the app)</li>
-  <li>Advertising identifiers (IDFA) or any cross-app tracking data</li>
+  <li>The Advertising Identifier (IDFA) or any cross-app advertising data</li>
   <li>Browsing history or activity outside the Penzel app</li>
+  <li>Personally-identifying behavioral data — what you tap, what you view, what you search for inside the app</li>
 </ul>
-<p>Penzel includes no analytics SDKs, and makes no network requests for tracking or behavioral data. The single exception is Firebase Crashlytics, used exclusively for anonymized crash reporting — described in detail in Section 3 below.</p>
+<p>Penzel uses one Google Firebase service for technical purposes — Crashlytics for crash reporting (Section 3) — which does not collect data that can identify you personally. The Firebase Analytics SDK is linked but data collection is <strong>disabled</strong> in this version (Section 4).</p>
 
 <h2>2. Information Stored Locally on Your Device</h2>
 <p>The app stores the following data <strong>only on your device</strong>, never transmitted anywhere:</p>
@@ -60,7 +60,7 @@
   <li>Approximate region, derived from your IP address at the time the crash report is sent; the IP itself is not stored</li>
 </ul>
 
-<p><strong>What Crashlytics does NOT collect from Penzel:</strong></p>
+<p><strong>What Crashlytics does NOT collect:</strong></p>
 <ul>
   <li>Your name, email, phone number, or any contact information</li>
   <li>Your precise location or GPS data</li>
@@ -69,36 +69,46 @@
   <li>Any data that would let us or Google identify you personally</li>
 </ul>
 
-<p>Crash reports are stored on Google's Firebase infrastructure under our Firebase project and are viewable only by the Penzel developer. Google's handling of this data is additionally governed by <a href="https://firebase.google.com/support/privacy">Firebase's Privacy Information</a> and Google's general <a href="https://policies.google.com/privacy">privacy policy</a>.</p>
+<h2>4. Analytics (Disabled in This Version)</h2>
+<p>The Firebase Analytics SDK is linked in the app bundle, but <strong>data collection is disabled</strong> (the SDK's <code>IS_ANALYTICS_ENABLED</code> setting is set to false). No usage events, screen-view events, or session data are sent to Google for analytics purposes.</p>
 
-<p>If you do not want crash reports sent, you have two options: do not use the app, or contact us at the address in Section 10 and we will work toward providing an in-app opt-out toggle in a future version.</p>
+<ul>
+  <li>No <strong>Advertising Identifier (IDFA)</strong> is collected — the app does not link <code>FirebaseAnalyticsIdentitySupport</code> and does not show an App Tracking Transparency prompt</li>
+  <li>No <strong>cross-app behavioral tracking</strong> is performed</li>
+  <li>No <strong>screen-view events</strong>, <strong>tap events</strong>, or <strong>feature-usage events</strong> are logged or transmitted</li>
+  <li>No <strong>demographic targeting or audience segmentation</strong> is performed</li>
+</ul>
 
-<h2>4. In-App Purchase</h2>
+<p>Any device information Firebase collects in connection with crash reporting (Section 3) is the only telemetry leaving your device. Google's handling of crash data is additionally governed by <a href="https://firebase.google.com/support/privacy">Firebase's Privacy Information</a> and Google's general <a href="https://policies.google.com/privacy">privacy policy</a>.</p>
+
+<p>If a future version of Penzel enables analytics, this Privacy Policy will be updated before that change ships and the App Store privacy disclosures will be updated accordingly (Section 9).</p>
+
+<h2>5. In-App Purchase</h2>
 <p>Penzel offers one optional in-app purchase: <strong>Penzel Full Access</strong> ($9.99 USD, one-time, non-consumable). This purchase is processed entirely by Apple's <a href="https://developer.apple.com/documentation/storekit">StoreKit</a> framework. Apple — not Penzel — receives and processes your payment information. Penzel never sees your credit card, billing address, or Apple ID.</p>
 <p>Refunds are handled by Apple per their <a href="https://support.apple.com/en-us/118223">App Store refund policy</a>. We have no ability to issue or deny refunds directly.</p>
 
-<h2>5. External Links</h2>
+<h2>6. External Links</h2>
 <p>Each recipe and diagnostic entry in Penzel includes a source attribution link to its origin — typically a public article on <a href="https://www.goonhammer.com">Goonhammer</a>. When you tap a source link, the article opens in an in-app Safari browser (<code>SFSafariViewController</code>). Safari handles its own privacy and may set its own cookies according to your Safari settings; we have no visibility into your browsing within those sessions.</p>
 
-<h2>6. Children's Privacy</h2>
-<p>Penzel is suitable for ages 4+ and does not knowingly collect personal information from anyone, including children. The only data collection — anonymized crash reports (Section 3) — does not include any personal identifiers and cannot be used to identify a child specifically.</p>
+<h2>7. Children's Privacy</h2>
+<p>Penzel is suitable for ages 4+ and does not knowingly collect personal information from anyone, including children. The data collection described in Sections 3 and 4 is anonymized and does not include any personal identifiers that could be used to identify a child specifically.</p>
 
-<h2>7. International Users (GDPR, CCPA, etc.)</h2>
-<p>Penzel collects no personal data, so most data-protection regulations have very little to apply to. The only data leaving your device is anonymized crash data, which most regulators treat as non-personal data when it cannot be linked to an individual (as is the case here). You retain all the rights guaranteed by GDPR, CCPA, and similar laws:</p>
+<h2>8. International Users (GDPR, CCPA, etc.)</h2>
+<p>Penzel collects no personally-identifying data. The aggregated, anonymized data described in Sections 3 and 4 is most-regulator-treated as non-personal data when it cannot be linked to an individual (as is the case here). You retain all the rights guaranteed by GDPR, CCPA, and similar laws:</p>
 <ul>
   <li><strong>Right to access:</strong> personal data on your device is visible in the app; we hold no other personal data about you.</li>
-  <li><strong>Right to deletion:</strong> uninstall the app to clear all on-device data. Crash reports are anonymized at submission and cannot be linked back to delete on request.</li>
+  <li><strong>Right to deletion:</strong> uninstall the app to clear all on-device data. Anonymous crash and analytics records cannot be linked back to a specific user, and so cannot be selectively deleted on request — they remain in Google's aggregate dataset.</li>
   <li><strong>Right to portability:</strong> there is no personal data to port.</li>
   <li><strong>Right to opt out of sale of personal data:</strong> we have no personal data to sell.</li>
 </ul>
 
-<h2>8. Future Features Requiring Data Collection</h2>
-<p>If a future version of Penzel introduces features beyond the current crash reporting that require additional data collection — for example, optional cloud sync, an online Q&A feature, or behavioral analytics — we will update this Privacy Policy <em>before</em> shipping the change, and any new data collection will be clearly disclosed and (where appropriate) require your opt-in consent.</p>
+<h2>9. Future Features Requiring Data Collection</h2>
+<p>If a future version of Penzel introduces features beyond the current crash reporting and anonymous analytics that require additional data collection — for example, optional cloud sync, an online Q&A feature, or behavioral targeting — we will update this Privacy Policy <em>before</em> shipping the change, and any new data collection will be clearly disclosed and (where appropriate) require your opt-in consent.</p>
 
-<h2>9. Changes to This Policy</h2>
+<h2>10. Changes to This Policy</h2>
 <p>If we change this Privacy Policy materially, we will update the date at the top of this document and (if the change introduces new data collection) prompt you in-app to review the changes. Continued use of Penzel after the effective date of a change constitutes acceptance of the updated policy.</p>
 
-<h2>10. Contact</h2>
+<h2>11. Contact</h2>
 <p>Questions about this Privacy Policy or how Penzel handles data? Email <a href="mailto:slidappquestions@gmail.com">slidappquestions@gmail.com</a>.</p>
 
 <footer>
